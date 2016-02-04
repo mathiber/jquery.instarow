@@ -1,0 +1,30 @@
+{
+  "name": "jquery.instarow",
+  "description": "Adding a row with Instagram images to your web site.",
+  "main": [
+      "dist/jquery.instarow.min.js",
+      "dist/jquery.instarow.min.css"
+  ],
+  "authors": [
+    "Mathias Bergersen <til@mathi.as>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "jQuery",
+    "Instagram"
+  ],
+  "homepage": "https://github.com/mathiber/jquery.instarow",
+  "moduleType": [
+    "globals"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~1.9 || >2.0.0"
+  }
+}
