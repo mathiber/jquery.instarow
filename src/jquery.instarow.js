@@ -20,6 +20,7 @@
 
         return this.each(function() {
             var $this = $(this),
+                defaultSettings,
                 settings,
                 openCorsProxyIndex,
                 url,
@@ -33,14 +34,29 @@
                 getHref,
                 renderInstaRow;
 
-            settings = $.extend({
+            defaultSettings = {
                 onSuccess: null,
                 onError: null,
                 user: 'self',
                 items: 10,
                 target: '_blank',
                 linkText: '{user} on Instagram'
-            }, options );
+            };
+
+            if ($this.data('instarow-user')) {
+                defaultSettings.user = $this.data('instarow-user');
+            }
+            if ($this.data('instarow-items')) {
+                defaultSettings.items = $this.data('instarow-items');
+            }
+            if ($this.data('instarow-link-text')) {
+                defaultSettings.linkText = $this.data('instarow-link-text');
+            }
+            if ($this.data('instarow-target')) {
+                defaultSettings.target = $this.data('instarow-target');
+            }
+
+            settings = $.extend(defaultSettings, options);
 
             openCorsProxyIndex = 0;
 
