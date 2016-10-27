@@ -77,20 +77,20 @@ $xl-max: $xxl-min - 1;
                 height: 100%;
 
                 & > span {
-                        display: table-cell;
-                        vertical-align: middle;
-                        font-weight: 700;
+                    display: table-cell;
+                    vertical-align: middle;
+                    font-weight: 700;
 
-                        &:before {
-                            content: '';
-                            display: inline-block;
-                            width: 16px;
-                            height: 16px;
-                            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAiCAMAAAAJbCvNAAAAAXNSR0IArs4c6QAAAVBQTFRFAAAA////gICAVVVVQEBAMzMzKysrICAgMzMzLi4uKysrJycnJCQkIiIiICAgLS0tKCgoJiYmISEhKSkpJiYmJCQkIyMjIiIiISEhJycnIiIiISEhICAgJCQkJCQkIyMjISEhICAgJCQkICAgHx8fISEhIiIiISEhICAgIiIiISEhICAgICAgHx8fICAgICAgISEhICAgICAgICAgICAgISEhISEhICAgHx8fICAgICAgHx8fHx8fICAgICAgICAgICAgHx8fICAgHx8fICAgICAgICAgHx8fICAgICAgHx8fHx8fHx8fICAgICAgICAgICAgHx8fHx8fHx8fICAgICAgHx8fHx8fHx8fICAgICAgICAgICAgHx8fHx8fHx8fICAgICAgICAgICAgHx8fHx8fHx8fHx8fICAgICAgICAgHx8fHx8fHx8fHx8fHx8fph1EswAAAG90Uk5TAAECAwQFBggKCwwNDg8QERMUFxkbHB0eHyElJygqKywuMDI3OT1ERVBTVVdfYmhpbW52eIGEjZaanZ+jrK2wtbq9wcTGx8rLztLT1NXX2Nna29zd4OLj5OXn6Onq6+zt7/Dx8vP09fb3+fr7/P3+WSWkGgAAAhlJREFUOMuNk+dXGlEQxUcsWLFRxIIgGoklCrE3xBbBRlAXA4jAgrAsy/3/v2W2sQbJOc6XN3N/d/fNm3ce0dfDZh8cHuEYHrTb2llgK5aq4kNUU7GtQAt7ougYUY/Ogzm1UvJPD7eJeDyeSNw+POUVVcsFVe7OAsXthd5/N+1d2C4CWTenx8CNu1PT7hvgmGimifLUZ+r/GaSpMpozFAF2PnNvDY0A7QAROgGWLOBaXHSp63du8QctASd0DTgMao/cq73fR+w0JiDvIQdwTRnUDT7/aA7gcZ5Gvo2xVMcfKqOgc1+JUSYazfBS8ulaAWU2ZbS8L8k4pGYhtiT7NDEDiRSktTwMvE7q302+AmEtS0Mh4FnLudkV8ywranNqCGiaBm5YbF2yTTSO9gyYBh9wZo3jDPC1GWaBS8twCcy2GYYUVHtM3lODMmQZBE08BzZMwwZw3mqygRctXwMqczqfqwBrWvaCBknGoGxXwHu4n6g//A5c6SfK8qBEFI2LTPOMG4lEg5e0S9eKEPkvsrGz88K8rAunIcm8/y9g3Ci7Vk/rQP10tcsQxnkvOgKWrQF0O53dVrUMHNEmsPe/t7YHbJJHhuTvzP0SZH47+zyqQCceEIB9XkdTgHwY8g58hAPe0KEM/B5Vi+mkfrhmrSKWOMRKrakryWnd7tiVOr1dadfR+uPE+kHsTsi9FYochbeccBc7WJ/Q0F8Po7Ydvz8c+QAAAABJRU5ErkJggg==');
-                            background-size: 100% 100%;
-                            margin-right: 10px;
-                            vertical-align: top;
-                        }
+                    &:before {
+                        content: '';
+                        display: inline-block;
+                        width: 16px;
+                        height: 16px;
+                        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAiCAMAAAAJbCvNAAAAAXNSR0IArs4c6QAAAVBQTFRFAAAA////gICAVVVVQEBAMzMzKysrICAgMzMzLi4uKysrJycnJCQkIiIiICAgLS0tKCgoJiYmISEhKSkpJiYmJCQkIyMjIiIiISEhJycnIiIiISEhICAgJCQkJCQkIyMjISEhICAgJCQkICAgHx8fISEhIiIiISEhICAgIiIiISEhICAgICAgHx8fICAgICAgISEhICAgICAgICAgICAgISEhISEhICAgHx8fICAgICAgHx8fHx8fICAgICAgICAgICAgHx8fICAgHx8fICAgICAgICAgHx8fICAgICAgHx8fHx8fHx8fICAgICAgICAgICAgHx8fHx8fHx8fICAgICAgHx8fHx8fHx8fICAgICAgICAgICAgHx8fHx8fHx8fICAgICAgICAgICAgHx8fHx8fHx8fHx8fICAgICAgICAgHx8fHx8fHx8fHx8fHx8fph1EswAAAG90Uk5TAAECAwQFBggKCwwNDg8QERMUFxkbHB0eHyElJygqKywuMDI3OT1ERVBTVVdfYmhpbW52eIGEjZaanZ+jrK2wtbq9wcTGx8rLztLT1NXX2Nna29zd4OLj5OXn6Onq6+zt7/Dx8vP09fb3+fr7/P3+WSWkGgAAAhlJREFUOMuNk+dXGlEQxUcsWLFRxIIgGoklCrE3xBbBRlAXA4jAgrAsy/3/v2W2sQbJOc6XN3N/d/fNm3ce0dfDZh8cHuEYHrTb2llgK5aq4kNUU7GtQAt7ougYUY/Ogzm1UvJPD7eJeDyeSNw+POUVVcsFVe7OAsXthd5/N+1d2C4CWTenx8CNu1PT7hvgmGimifLUZ+r/GaSpMpozFAF2PnNvDY0A7QAROgGWLOBaXHSp63du8QctASd0DTgMao/cq73fR+w0JiDvIQdwTRnUDT7/aA7gcZ5Gvo2xVMcfKqOgc1+JUSYazfBS8ulaAWU2ZbS8L8k4pGYhtiT7NDEDiRSktTwMvE7q302+AmEtS0Mh4FnLudkV8ywranNqCGiaBm5YbF2yTTSO9gyYBh9wZo3jDPC1GWaBS8twCcy2GYYUVHtM3lODMmQZBE08BzZMwwZw3mqygRctXwMqczqfqwBrWvaCBknGoGxXwHu4n6g//A5c6SfK8qBEFI2LTPOMG4lEg5e0S9eKEPkvsrGz88K8rAunIcm8/y9g3Ci7Vk/rQP10tcsQxnkvOgKWrQF0O53dVrUMHNEmsPe/t7YHbJJHhuTvzP0SZH47+zyqQCceEIB9XkdTgHwY8g58hAPe0KEM/B5Vi+mkfrhmrSKWOMRKrakryWnd7tiVOr1dadfR+uPE+kHsTsi9FYochbeccBc7WJ/Q0F8Po7Ydvz8c+QAAAABJRU5ErkJggg==');
+                        background-size: 100% 100%;
+                        margin-right: 10px;
+                        vertical-align: top;
+                    }
                 }
             }
         }

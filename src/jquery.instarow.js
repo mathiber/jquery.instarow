@@ -2,9 +2,9 @@
     $.fn.instaRow = function( options ) {
 
         var openCorsProxies = [
-            'https://crossorigin.me/{url}',
             'http://cors.io/?u={url}',
-            'https://jsonp.afeld.me/?url={url}'
+            'https://jsonp.afeld.me/?url={url}',
+            'https://crossorigin.me/{url}'
         ];
         var injectString = function(source, placeholder, value) {
             return source.replace(placeholder, value);
@@ -40,7 +40,9 @@
                 user: 'self',
                 items: 10,
                 target: '_blank',
-                linkText: '{user} on Instagram'
+                linkText: '{user} on Instagram',
+                proxy: null,
+                timeout: 2000
             };
 
             if ($this.data('instarow-user')) {
@@ -54,6 +56,12 @@
             }
             if ($this.data('instarow-target')) {
                 defaultSettings.target = $this.data('instarow-target');
+            }
+            if ($this.data('instarow-proxy')) {
+                defaultSettings.proxy = $this.data('instarow-proxy');
+            }
+            if ($this.data('instarow-timeout')) {
+                defaultSettings.timeout = $this.data('instarow-timeout');
             }
 
             settings = $.extend(defaultSettings, options);
@@ -106,13 +114,24 @@
             };
 
             getData = function() {
-                var corsUrl = injectCorsProxyUrl(openCorsProxyIndex, url);
+                var corsUrl;
+                settings.proxy
+                if (settings.proxy) {
+                  if (openCorsProxyIndex === 0) {
+                    corsUrl = injectString(settings.proxy, '{url}', url)
+                  } else {
+                    corsUrl = injectCorsProxyUrl(openCorsProxyIndex-1, url);
+                  }
+                } else {
+                  corsUrl = injectCorsProxyUrl(openCorsProxyIndex, url);
+                }
                 if (corsUrl) {
                     return $.ajax({
                         method: 'GET',
                         url: corsUrl,
                         success: onSuccess.bind(this),
-                        error: retry.bind(this)
+                        error: retry.bind(this),
+                        timeout: settings.timeout
                     });
                 } else {
                     return false;
