@@ -2,8 +2,8 @@
   "name": "jquery.instarow",
   "description": "Adding a row with Instagram images to your web site.",
   "main": [
-      "dist/jquery.instarow.min.js",
-      "dist/jquery.instarow.min.css"
+      "src/jquery.instarow.js",
+      "src/jquery.instarow.scss"
   ],
   "authors": [
     "Mathias Bergersen <til@mathi.as>"
