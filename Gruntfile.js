@@ -4,19 +4,15 @@ module.exports = function (grunt) {
 
   require('jit-grunt')(grunt);
 
-  // Configurable paths
   var config = {
     src: 'src',
     dist: 'dist'
   };
 
-  // Define the configuration for all the tasks
   grunt.initConfig({
 
-    // Project settings
     config: config,
 
-    // Empties folders to start fresh
     clean: {
       dist: {
         files: [{
@@ -29,7 +25,20 @@ module.exports = function (grunt) {
       }
     },
 
-    // Compiles Sass to CSS and generates necessary files if requested
+    datauri: {
+      default: {
+        options: {
+          classPrefix: 'icon-'
+        },
+        src: [
+          'icons/*'
+        ],
+        dest: [
+          '.tmp/_icons.scss'
+        ]
+      }
+    },
+
     sass: {
       dist: {
         files: [{
@@ -47,7 +56,6 @@ module.exports = function (grunt) {
       options: {
         map: true,
         processors: [
-          // Add vendor prefixed styles
           require('autoprefixer')({
             browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']
           })
@@ -85,12 +93,13 @@ module.exports = function (grunt) {
           extDot: 'last'
         }]
       }
-    },
+    }
 
   });
 
   grunt.registerTask('build', [
     'clean:dist',
+    'datauri',
     'sass',
     'postcss',
     'cssmin',
