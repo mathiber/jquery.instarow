@@ -17,6 +17,17 @@
                 return false;
             }
         };
+        var measureLuminance = function(hex) {
+            hex = String(hex).replace(/[^0-9a-f]/gi, '');
+            if (hex.length < 6) {
+                hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+            }
+            var c = 0, i;
+            for (i = 0; i < 3; i++) {
+                c += Math.round(Math.min(Math.max(0, parseInt(hex.substr(i*2,2), 16)), 255));
+            }
+            return c/3;
+        }
 
         return this.each(function() {
             var $this = $(this),
@@ -41,6 +52,7 @@
                 items: 10,
                 target: '_blank',
                 linkText: '{user} on Instagram',
+                linkColor: null,
                 proxy: null,
                 timeout: 2000
             };
@@ -53,6 +65,9 @@
             }
             if ($this.data('instarow-link-text')) {
                 defaultSettings.linkText = $this.data('instarow-link-text');
+            }
+            if ($this.data('instarow-link-color')) {
+                defaultSettings.linkColor = $this.data('instarow-link-color');
             }
             if ($this.data('instarow-target')) {
                 defaultSettings.target = $this.data('instarow-target');
@@ -212,7 +227,19 @@
                     ));
                     itemCount++;
                 }
-                $this.append($('<div>').addClass('instarow__link').append(
+                $this.append($('<div>')
+                  .addClass('instarow__link')
+                  .css('background-color', function() {
+                    if (settings.linkColor) {
+                      var lum = measureLuminance(settings.linkColor);
+                      if (lum < 130) {
+                        $(this).addClass('instarow__link--dark');
+                      }
+                      return settings.linkColor;
+                    }
+                    return null;
+                  })
+                  .append(
                     $('<a>')
                         .attr({
                             'href': url,
